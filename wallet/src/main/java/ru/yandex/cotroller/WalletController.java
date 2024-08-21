@@ -3,6 +3,7 @@ package ru.yandex.cotroller;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,7 @@ public class WalletController {
     @GetMapping("/{walletId}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseDtoGetBalance getBalance(@PathVariable UUID walletId) {
+        log.info("Запрос на получение баланса кошелька под UUID: {}", walletId);
         return walletService.getBalance(walletId);
     }
 }
