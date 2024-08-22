@@ -34,6 +34,17 @@
 				<version>4.13.2</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-core</artifactId>
+				<version>4.29.1</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.liquibase</groupId>
+						<artifactId>liquibase-commercial</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
